@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_email.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_lock.xml" value="0.1905" />
+        <entry key="app/src/main/res/drawable/roundedbutton.xml" value="0.1905" />
         <entry key="app/src/main/res/layout/activity_bem_vindo.xml" value="0.27992095947265616" />
         <entry key="app/src/main/res/layout/activity_carrossel.xml" value="0.1527651858567543" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/layout_fragment_login.xml" value="0.21846943138093203" />
       </map>
     </option>
   </component>

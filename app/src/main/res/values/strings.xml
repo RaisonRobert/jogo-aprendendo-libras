@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Jogo Aprendendo Libras</string>
+    <string name="app_name">Aprendendo Libras</string>
+    <string name="emaillogin">Digite seu email</string>
+    <string name="senhalogin">Digite sua senha</string>
+    <string name="descricao_login">Insira seu Email e Senha</string>
+    <string name="titulo_login">Bem Vindo</string>
+    <string name="btnLogin">Entrar</string>
+    <string name="deseja_criar_conta">Deseja Criar Conta?</string>
 </resources>
