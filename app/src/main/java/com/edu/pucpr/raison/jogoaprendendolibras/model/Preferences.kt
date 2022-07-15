@@ -20,6 +20,11 @@ object Preferences {
         }
         return preference!!
     }
+    /**
+     * Método para Salvar token do usuário na memória do device
+     * @param context Contexto
+     * @return String
+     */
     fun saveToken(context: Context, token: String) {
         preferences(context).edit().putString(preferenceTOKEN, token).apply()
         chaveAutenticacao = token
