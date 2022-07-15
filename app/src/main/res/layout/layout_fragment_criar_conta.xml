@@ -15,12 +15,12 @@
 
 
         <TextView
-            android:id="@+id/txtLogin"
+            android:id="@+id/txtTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="@string/titulo_login"
             android:textColor="@color/colorPrimary"
+            android:text="@string/criar_conta"
             android:textSize="40sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,15 +28,42 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txtDescLogin"
+            android:id="@+id/txtDescCriarConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:text="@string/descricao_login"
+            android:layout_marginEnd="20dp"
+            android:text="Se ainda não possui uma conta ativa, então crie agora."
+            android:textAlignment="center"
             android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="@+id/txtLogin"
-            app:layout_constraintStart_toStartOf="@+id/txtLogin"
-            app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nomeLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:hint="@string/nome"
+            android.support.design:hintAnimationEnabled="true"
+            android.support.design:hintEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDescCriarConta">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nomefield"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_account"
+                android:drawablePadding="12dp"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailLayout"
@@ -46,20 +73,21 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
+            android.support.design:hintAnimationEnabled="true"
+            android.support.design:hintEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDescLogin">
+            app:layout_constraintTop_toBottomOf="@+id/nomeLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailfieldtext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints="@string/emaillogin"
+                android:autofillHints="Email"
                 android:drawableStart="@drawable/ic_email"
                 android:drawablePadding="12dp"
-                android:hint="@string/emaillogin"
-                android:inputType="textWebEmailAddress"
-                app:layout_constraintTop_toBottomOf="@+id/txtDescLogin" />
+                android:inputType="textEmailAddress"
+                android:hint="@string/emaillogin"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -85,37 +113,22 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_lock"
                 android:drawablePadding="12dp"
-                android:ems="10"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/criarConta"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_below="@+id/passwordLayout"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="@color/white"
-            android:text="@string/deseja_criar_conta"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:cornerRadius="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
             android:layout_alignStart="@+id/passwordLayout"
             android:layout_alignEnd="@+id/passwordLayout"
-            android:layout_marginTop="20dp"
-            android:contentDescription="@string/btnLogin"
-            android:text="@string/btnLogin"
+            android:contentDescription="@string/criar_conta"
+            android:text="@string/criar_conta"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/criarConta" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

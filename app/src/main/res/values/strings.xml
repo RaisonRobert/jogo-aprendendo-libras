@@ -6,4 +6,7 @@
     <string name="titulo_login">Bem Vindo</string>
     <string name="btnLogin">Entrar</string>
     <string name="deseja_criar_conta">Deseja Criar Conta?</string>
+    <string name="nome">Digite seu Nome</string>
+    <string name="nomeCriarConta">Nome</string>
+    <string name="criar_conta">Criar Conta</string>
 </resources>
