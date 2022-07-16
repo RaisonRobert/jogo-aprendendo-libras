@@ -7,6 +7,8 @@ object BancodeDados {
             DadosLogin(
                 nome = "Raison",
                 email = "raison@pucpr.com",
-                senha = "123"
+                senha = "123",
+                rank = 1
             ))
+    var arquivosDadosCadastrado: MutableList<DadosLogin> = mutableListOf(Login)
 }

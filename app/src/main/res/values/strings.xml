@@ -13,5 +13,7 @@
     <string name="bem_vindo_titulo">Bem Vindo ao Apredendo Libras</string>
     <string name="notValidEmail">Por favor, insira um email válido.</string>
     <string name="notValidLogin"> Email ou senha inválido.</string>
+    <string name="vazio"> Preencha todos campos corretamente</string>
+    <string name="emailCadastrado"> Desculpe Email já Cadastrado</string>
 
 </resources>

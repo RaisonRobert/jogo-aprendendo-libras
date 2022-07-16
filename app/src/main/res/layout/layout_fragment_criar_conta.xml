@@ -80,7 +80,7 @@
             app:layout_constraintTop_toBottomOf="@+id/nomeLayout">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailfieldtext"
+                android:id="@+id/emailfieldtextcriarConta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="Email"
@@ -108,7 +108,7 @@
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordfield"
+                android:id="@+id/passwordfieldCriarConta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_lock"
@@ -117,13 +117,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLogar"
+            android:id="@+id/btnCriarConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
-            android:layout_alignStart="@+id/passwordLayout"
-            android:layout_alignEnd="@+id/passwordLayout"
+            android:layout_alignStart="@+id/passwordLayoutCriarConta"
+            android:layout_alignEnd="@+id/passwordLayoutCriarConta"
             android:contentDescription="@string/criar_conta"
             android:text="@string/criar_conta"
             app:layout_constraintBottom_toBottomOf="parent"

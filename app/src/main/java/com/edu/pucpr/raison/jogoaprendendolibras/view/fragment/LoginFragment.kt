@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -23,13 +24,12 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-
         return inflater.inflate(R.layout.layout_fragment_login, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setPreferencesLogin("", "")
+//        setPreferencesLogin("", "")
         loading = Ui.createLoadDialog(requireContext(), false)
         if (verificarLogin()) {
             startHome()
@@ -45,15 +45,19 @@ class LoginFragment : Fragment() {
     }
 
     private fun verificarLogin(): Boolean {
-        if ((Preferences.getEmail(requireContext()) == BancodeDados.Login.email) && (Preferences.getSenha(
-                requireContext()
-            ) == BancodeDados.Login.senha)
-        ) {
-            return true
+        BancodeDados.arquivosDadosCadastrado.forEach {
+            if ((Preferences.getEmail(requireContext()) == it.email) && (Preferences.getSenha(requireContext()) == it.senha)) {
+                return true
+            }
         }
         return false
     }
 
+    /**
+     * Método criado para o click dos botoes
+     * @param criarConta
+     * @param btnLogar
+     */
     private fun botoes(view: View) {
         view.criarConta.setOnClickListener {
             findNavController().navigate(R.id.action_login_to_criar_conta)
@@ -66,7 +70,10 @@ class LoginFragment : Fragment() {
             loading.dismiss()
         }
     }
-
+    /**
+     * Método criado para validação do Login
+     * @return Boolean
+     */
     private fun confirmaLogin(view: View): Boolean {
         loading.show()
         val email = view.emailfieldtext.text.toString()

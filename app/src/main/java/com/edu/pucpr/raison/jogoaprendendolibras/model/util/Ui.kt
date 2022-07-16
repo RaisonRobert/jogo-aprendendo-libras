@@ -9,6 +9,14 @@ import com.edu.pucpr.raison.jogoaprendendolibras.R
 import kotlinx.android.synthetic.main.dialog_modal.view.*
 
 object Ui {
+    /**
+     *
+     * Sobrecarga do método que cria modal padrão do load
+     * @param context Contexto
+     * @param show boolean
+     * @return AlertDialog
+     *
+     * */
     fun createLoadDialog(context: Context, show: Boolean): AlertDialog {
         val builder = AlertDialog.Builder(context)
         builder.setView(R.layout.dialog_load)
