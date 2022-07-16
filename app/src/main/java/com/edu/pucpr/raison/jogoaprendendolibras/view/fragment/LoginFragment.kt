@@ -11,13 +11,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.edu.pucpr.raison.jogoaprendendolibras.R
 import com.edu.pucpr.raison.jogoaprendendolibras.model.banco.BancodeDados
-import com.edu.pucpr.raison.jogoaprendendolibras.model.util.Load
+import com.edu.pucpr.raison.jogoaprendendolibras.model.util.Ui
 import com.edu.pucpr.raison.jogoaprendendolibras.model.util.Preferences
-import com.edu.pucpr.raison.jogoaprendendolibras.view.activity.BemVindoActivity
 import com.edu.pucpr.raison.jogoaprendendolibras.view.activity.HomeActivity
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.layout_fragment_login.view.*
 
-class LoginFragment : Fragment(){
+class LoginFragment : Fragment() {
     private lateinit var loading: AlertDialog
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,17 +26,16 @@ class LoginFragment : Fragment(){
 
         return inflater.inflate(R.layout.layout_fragment_login, container, false)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        setPreferencesLogin("", "")
-        loading = Load.createLoadDialog(requireContext(), false)
-        loading.show()
-        if(verificarLogin()){
+        setPreferencesLogin("", "")
+        loading = Ui.createLoadDialog(requireContext(), false)
+        if (verificarLogin()) {
             startHome()
-        }else{
+        } else {
             setPreferencesLogin("", "")
         }
-        loading.dismiss()
         botoes(view)
     }
 
@@ -46,7 +45,10 @@ class LoginFragment : Fragment(){
     }
 
     private fun verificarLogin(): Boolean {
-        if((Preferences.getEmail(requireContext()) == BancodeDados.Login.email)&&(Preferences.getSenha(requireContext()) == BancodeDados.Login.senha) ){
+        if ((Preferences.getEmail(requireContext()) == BancodeDados.Login.email) && (Preferences.getSenha(
+                requireContext()
+            ) == BancodeDados.Login.senha)
+        ) {
             return true
         }
         return false
@@ -57,26 +59,71 @@ class LoginFragment : Fragment(){
             findNavController().navigate(R.id.action_login_to_criar_conta)
         }
         view.btnLogar.setOnClickListener {
-            if(confirmaLogin(view)){
-                startHome()
+            if (confirmaLogin(view)) {
+                loading.dismiss()
+                dialogLogin()
             }
+            loading.dismiss()
         }
     }
 
     private fun confirmaLogin(view: View): Boolean {
+        loading.show()
         val email = view.emailfieldtext.text.toString()
         val senha = view.passwordfield.text.toString()
-        Log.i("teste","email: $email Senha: $senha")
-//        if(verificarLogin()){
+        val emailLayout = view.findViewById<TextInputLayout>(R.id.emailLayout)
+        val senhaLayout = view.findViewById<TextInputLayout>(R.id.passwordLayout)
+        emailLayout.isErrorEnabled = true
+        senhaLayout.isErrorEnabled = true
+
+        if (emailValid(email)) {
+            Log.i("teste", "email: $email Senha: $senha")
+            emailLayout.error = null
             setPreferencesLogin(email, senha)
-//            return true
-//        }
+            if (verificarLogin()) {
+                setPreferencesLogin(email, senha)
+
+                emailLayout.isErrorEnabled = false
+                senhaLayout.isErrorEnabled = false
+                return true
+            } else
+                senhaLayout.error = getString(R.string.notValidLogin)
+                emailLayout.error = getString(R.string.notValidLogin)
+
+        } else {
+            emailLayout.error = getString(R.string.notValidEmail)
+        }
         return false
     }
-    private fun setPreferencesLogin(email: String, senha: String) {
-        Preferences.setEmail(requireContext(),email)
-        Preferences.setSenha(requireContext(),senha)
-        Log.i("teste","Preferences Armazenado>>> email: ${Preferences.getEmail(requireContext())} Senha: ${Preferences.getSenha(requireContext())}")
 
+    private fun dialogLogin() {
+        Ui.createModal(requireContext(),
+            R.drawable.ic_sucesso,
+            "Sucesso",
+            "Login Efetuado Com Sucesso",
+            "Bem vindo ao Aprendendo Libras")!!
+            .setOnDismissListener {
+                startHome()
+        }
+
+    }
+
+    private fun setPreferencesLogin(email: String, senha: String) {
+        Preferences.setEmail(requireContext(), email)
+        Preferences.setSenha(requireContext(), senha)
+        Log.i(
+            "teste",
+            "Preferences Armazenado>>> email: ${Preferences.getEmail(requireContext())} Senha: ${
+                Preferences.getSenha(requireContext())
+            }"
+        )
+    }
+
+    /**
+     * Método criado para validação do Email
+     * @return Boolean
+     */
+    private fun emailValid(email: String): Boolean {
+        return !(email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches())
     }
 }
