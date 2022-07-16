@@ -117,12 +117,6 @@ class LoginFragment : Fragment() {
     private fun setPreferencesLogin(email: String, senha: String) {
         Preferences.setEmail(requireContext(), email)
         Preferences.setSenha(requireContext(), senha)
-        Log.i(
-            "teste",
-            "Preferences Armazenado>>> email: ${Preferences.getEmail(requireContext())} Senha: ${
-                Preferences.getSenha(requireContext())
-            }"
-        )
     }
 
     /**

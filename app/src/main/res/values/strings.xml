@@ -15,5 +15,6 @@
     <string name="notValidLogin"> Email ou senha inválido.</string>
     <string name="vazio"> Preencha todos campos corretamente</string>
     <string name="emailCadastrado"> Desculpe Email já Cadastrado</string>
+    <string name="logo">logo</string>
 
 </resources>
