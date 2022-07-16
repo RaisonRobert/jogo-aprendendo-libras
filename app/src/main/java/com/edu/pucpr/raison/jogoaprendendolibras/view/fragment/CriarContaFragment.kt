@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.edu.pucpr.raison.jogoaprendendolibras.R
 import com.edu.pucpr.raison.jogoaprendendolibras.model.banco.BancodeDados
 import com.edu.pucpr.raison.jogoaprendendolibras.model.body.DadosLogin
+import com.edu.pucpr.raison.jogoaprendendolibras.model.util.Preferences
 import com.edu.pucpr.raison.jogoaprendendolibras.model.util.Ui
 import com.edu.pucpr.raison.jogoaprendendolibras.view.activity.HomeActivity
 import com.google.android.material.textfield.TextInputLayout
@@ -30,11 +31,6 @@ class CriarContaFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         loading = Ui.createLoadDialog(requireContext(), false)
         botoes(view)
-        imprimir()
-    }
-
-    private fun imprimir() {
-        Log.i("teste", "Arquivos: ${BancodeDados.arquivosDadosCadastrado}")
     }
 
     private fun botoes(view: View) {
@@ -65,6 +61,7 @@ class CriarContaFragment: Fragment() {
                         senha = senha,
                         rank = null
                     ))
+                    setPreferencesLogin(email, senha)
                     dialogContaCadastrada()
                 }else {
                     emailLayout.error = getString(R.string.emailCadastrado)
@@ -121,5 +118,15 @@ class CriarContaFragment: Fragment() {
     private fun startHome() {
         startActivity(Intent(requireContext(), HomeActivity::class.java))
         requireActivity().finish()
+    }
+    private fun setPreferencesLogin(email: String, senha: String) {
+        Preferences.setEmail(requireContext(), email)
+        Preferences.setSenha(requireContext(), senha)
+        Log.i(
+            "teste",
+            "Preferences Armazenado>>> email: ${Preferences.getEmail(requireContext())} Senha: ${
+                Preferences.getSenha(requireContext())
+            }"
+        )
     }
 }

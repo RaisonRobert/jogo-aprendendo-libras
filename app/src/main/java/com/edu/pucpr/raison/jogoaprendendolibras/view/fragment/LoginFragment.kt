@@ -38,7 +38,6 @@ class LoginFragment : Fragment() {
         }
         botoes(view)
     }
-
     private fun startHome() {
         startActivity(Intent(requireContext(), HomeActivity::class.java))
         requireActivity().finish()
