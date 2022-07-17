@@ -16,5 +16,7 @@
     <string name="vazio"> Preencha todos campos corretamente</string>
     <string name="emailCadastrado"> Desculpe Email já Cadastrado</string>
     <string name="logo">logo</string>
+    <string name="textoDescJogoLibras">  Este aplicativo tem como um objetivo facilitar seu aprendizado na linguagem de libras, consiste em uma pergunta e o você seleciona a imagem correta, no fim você terá uma pontuação de acordo com as respostas certas.</string>
+    <string name="tituloRank">Melhores Jogadores</string>
 
 </resources>

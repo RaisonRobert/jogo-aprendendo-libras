@@ -4,5 +4,7 @@ data class DadosLogin(
     var nome : String,
     var email : String,
     var senha : String,
-    var rank : Int?
+    var rank : Int?,
+    var tempo : String?,
+    var pontos: Int?,
 )

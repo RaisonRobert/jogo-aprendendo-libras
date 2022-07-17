@@ -8,10 +8,15 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.edu.pucpr.raison.jogoaprendendolibras.R
+import com.edu.pucpr.raison.jogoaprendendolibras.model.banco.BancodeDados
 import com.edu.pucpr.raison.jogoaprendendolibras.model.util.Preferences
 import com.edu.pucpr.raison.jogoaprendendolibras.view.activity.HomeActivity
 import com.edu.pucpr.raison.jogoaprendendolibras.view.activity.LoginActivity
+import kotlinx.android.synthetic.main.layout_fragment_criar_conta.view.*
+import kotlinx.android.synthetic.main.layout_fragment_home.view.*
+
 
 class HomeFragment : Fragment(){
     override fun onCreateView(
@@ -24,11 +29,28 @@ class HomeFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHeader(view)
+        setSaudacoes(view)
+        botoes(view)
     }
+
+    private fun botoes(view: View) {
+        view.btnRank.setOnClickListener {
+            findNavController().navigate(R.id.action_home_to_rank)
+        }
+        view.btnIniciar.setOnClickListener {
+
+        }
+    }
+
+    private fun setSaudacoes(view: View) {
+        view.txtSaudacoes.setText("Olá,\nBem Vindo ${BancodeDados.dadosUser.nome}")
+    }
+
     /**
      * Método criado para setar os itens da Header
      * @param view View
      */
+    @Suppress("DEPRECATION")
     private fun setHeader(view: View) {
         val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
         setHasOptionsMenu(true)

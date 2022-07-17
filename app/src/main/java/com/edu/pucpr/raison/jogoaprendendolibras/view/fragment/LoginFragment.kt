@@ -46,6 +46,12 @@ class LoginFragment : Fragment() {
     private fun verificarLogin(): Boolean {
         BancodeDados.arquivosDadosCadastrado.forEach {
             if ((Preferences.getEmail(requireContext()) == it.email) && (Preferences.getSenha(requireContext()) == it.senha)) {
+                BancodeDados.dadosUser.nome = it.nome
+                BancodeDados.dadosUser.email = it.email
+                BancodeDados.dadosUser.senha = it.senha
+                BancodeDados.dadosUser.rank = it.rank
+                BancodeDados.dadosUser.tempo = it.tempo
+                BancodeDados.dadosUser.pontos = it.pontos
                 return true
             }
         }

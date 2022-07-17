@@ -59,8 +59,14 @@ class CriarContaFragment: Fragment() {
                         nome = nome,
                         email = email,
                         senha = senha,
-                        rank = null
+                        rank = null,
+                        tempo = null,
+                        pontos = null
                     ))
+                    BancodeDados.dadosUser.nome = nome
+                    BancodeDados.dadosUser.email = email
+                    BancodeDados.dadosUser.senha = senha
+                    BancodeDados.dadosUser.rank = null
                     setPreferencesLogin(email, senha)
                     dialogContaCadastrada()
                 }else {
