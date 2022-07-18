@@ -28,6 +28,8 @@ class HomeFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        BancodeDados.pontos = 0
+        BancodeDados.num = 1
         setHeader(view)
         setSaudacoes(view)
         botoes(view)
@@ -38,7 +40,7 @@ class HomeFragment : Fragment(){
             findNavController().navigate(R.id.action_home_to_rank)
         }
         view.btnIniciar.setOnClickListener {
-
+            findNavController().navigate(R.id.action_home_to_inicia_jogo)
         }
     }
 

@@ -49,8 +49,6 @@ class LoginFragment : Fragment() {
                 BancodeDados.dadosUser.nome = it.nome
                 BancodeDados.dadosUser.email = it.email
                 BancodeDados.dadosUser.senha = it.senha
-                BancodeDados.dadosUser.rank = it.rank
-                BancodeDados.dadosUser.tempo = it.tempo
                 BancodeDados.dadosUser.pontos = it.pontos
                 return true
             }

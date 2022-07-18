@@ -16,9 +16,26 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_home_to_inicia_jogo"
+            app:destination="@id/inicia_jogo"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment android:id="@+id/rank"
         android:name="com.edu.pucpr.raison.jogoaprendendolibras.view.fragment.RankFragment"
         android:label="Rank"
         tools:layout="@layout/layout_fragment_rank"/>
+    <fragment android:id="@+id/inicia_jogo"
+        android:name="com.edu.pucpr.raison.jogoaprendendolibras.view.fragment.JogosLibrasFragment"
+        android:label="Inicia Jogo"
+        tools:layout="@layout/layout_fragment_jogos_libras">
+        <action
+            android:id="@+id/action_inicia_jogo_self2"
+            app:destination="@id/inicia_jogo"
+            app:popUpTo="@id/inicia_jogo"
+            app:popUpToInclusive="true"/>
+    </fragment>
 </navigation>

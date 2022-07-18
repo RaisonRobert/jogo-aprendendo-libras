@@ -18,10 +18,10 @@ class RecyclerViewRank (var clickListener: RankFragment) :
     var itemListener: itemClickListenerRank? = null
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         @SuppressLint("ResourceAsColor", "SetTextI18n")
-        fun bindView(listAdapter: DadosLogin, action : itemClickListenerRank) {
+        fun bindView(listAdapter: DadosLogin, action : itemClickListenerRank, position: Int) {
             itemView.textViewNome.text = listAdapter.nome.toString()
-            itemView.txtPosicao.text = listAdapter.rank.toString()
-            itemView.txtTempo.text = "Tempo: " + listAdapter.tempo.toString()
+            itemView.txtPosicao.text = (position + 1).toString()
+//            itemView.txtTempo.text = "Tempo: " + listAdapter.tempo.toString()
             itemView.textViewPontos.text = "Pontuação: " + listAdapter.pontos.toString()
             itemView.setOnClickListener{
                 action.itemClick(listAdapter, adapterPosition)
@@ -41,7 +41,7 @@ class RecyclerViewRank (var clickListener: RankFragment) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val listr = listar[position]
-        holder.bindView(listr, clickListener)
+        holder.bindView(listr, clickListener, position)
         holder.let {
             itemListener?.itemClick(listar[position], position)
         }
@@ -50,9 +50,7 @@ class RecyclerViewRank (var clickListener: RankFragment) :
     override fun getItemCount(): Int {
         return listar.size
     }
-
-    @SuppressLint("NotifyDataSetChanged")
-    public fun popularLista(dado: MutableList<DadosLogin>) {
+    fun popularLista(dado: MutableList<DadosLogin>) {
         this.listar.clear()
         this.listar.addAll(dado)
         Log.i("teste", "lista ---- >> $listar")

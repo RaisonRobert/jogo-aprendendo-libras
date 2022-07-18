@@ -1,6 +1,7 @@
 package com.edu.pucpr.raison.jogoaprendendolibras.view.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,19 +36,19 @@ class RankFragment : Fragment(), itemClickListenerRank {
         addDados()
     }
     private fun addDados() {
-        adapterLista.popularLista(BancodeDados.arquivosDadosCadastrado)
+        BancodeDados.arquivosDadosCadastrado.sortByDescending { it.pontos }
+        val listaOrdenada: MutableList<DadosLogin> = mutableListOf()
+        BancodeDados.arquivosDadosCadastrado.forEach{
+            if (it.pontos != null){
+                listaOrdenada.add(it)
+            }
+        }
+        adapterLista.popularLista(listaOrdenada)
     }
     private fun setupRecyclerView(view: View) {
         recycler_lista = view.findViewById(R.id.recyclerRank)
         recycler_lista.layoutManager = LinearLayoutManager(requireContext())
         recycler_lista.adapter = adapterLista
-        adapterLista.apply {
-            itemListener = object :
-                itemClickListenerRank{
-                override fun itemClick(dado: DadosLogin, position: Int) {
-                }
-            }
-        }
 
     }
 
@@ -69,7 +70,7 @@ class RankFragment : Fragment(), itemClickListenerRank {
     }
 
     override fun itemClick(dado: DadosLogin, position: Int) {
-        TODO("Not yet implemented")
+        Log.i("teste","dados click $dado")
     }
 
 

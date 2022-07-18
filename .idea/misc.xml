@@ -9,11 +9,13 @@
         <entry key="app/src/main/res/drawable/ic_arrow_back_black_24dp.xml" value="0.2115" />
         <entry key="app/src/main/res/drawable/ic_baseline_email.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_email.xml" value="0.1905" />
+        <entry key="app/src/main/res/drawable/ic_fail.xml" value="0.2115" />
         <entry key="app/src/main/res/drawable/ic_lock.xml" value="0.1905" />
         <entry key="app/src/main/res/drawable/ic_rank.xml" value="0.2115" />
         <entry key="app/src/main/res/drawable/ic_sucesso.xml" value="0.101" />
         <entry key="app/src/main/res/drawable/imagem.xml" value="0.302" />
         <entry key="app/src/main/res/drawable/roundedbutton.xml" value="0.1905" />
+        <entry key="app/src/main/res/drawable/teste.xml" value="0.2115" />
         <entry key="app/src/main/res/layout/activity_bem_vindo.xml" value="0.27992095947265616" />
         <entry key="app/src/main/res/layout/activity_carrossel.xml" value="0.1527651858567543" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.16228467815049863" />
@@ -25,6 +27,7 @@
         <entry key="app/src/main/res/layout/item_rank.xml" value="0.28641837873138953" />
         <entry key="app/src/main/res/layout/layout_fragment_criar_conta.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_fragment_home.xml" value="0.34801762114537443" />
+        <entry key="app/src/main/res/layout/layout_fragment_jogos_libras.xml" value="0.20308250226654578" />
         <entry key="app/src/main/res/layout/layout_fragment_login.xml" value="0.21846943138093203" />
         <entry key="app/src/main/res/layout/layout_fragment_rank.xml" value="0.20435174441757414" />
         <entry key="app/src/main/res/menu/menu_home.xml" value="0.21846943138093203" />

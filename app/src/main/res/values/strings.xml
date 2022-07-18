@@ -18,5 +18,6 @@
     <string name="logo">logo</string>
     <string name="textoDescJogoLibras">  Este aplicativo tem como um objetivo facilitar seu aprendizado na linguagem de libras, consiste em uma pergunta e o você seleciona a imagem correta, no fim você terá uma pontuação de acordo com as respostas certas.</string>
     <string name="tituloRank">Melhores Jogadores</string>
+    <string name="pergunta">Pergunta</string>
 
 </resources>

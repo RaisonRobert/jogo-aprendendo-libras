@@ -1,11 +1,15 @@
 package com.edu.pucpr.raison.jogoaprendendolibras.model.util
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.edu.pucpr.raison.jogoaprendendolibras.R
+import com.edu.pucpr.raison.jogoaprendendolibras.model.banco.BancodeDados
+import com.edu.pucpr.raison.jogoaprendendolibras.model.body.DadosLogin
 import kotlinx.android.synthetic.main.dialog_modal.view.*
 
 object Ui {
@@ -66,6 +70,22 @@ object Ui {
 
         }
         return mAlertDialog
+    }
+    /**
+     * Método que converte a string Base64 em um bitmap
+     * @param base64 String a ser convertida
+     */
+    fun convertBase64ToBitmap(base64: String): Bitmap? {
+        val data = android.util.Base64.decode(base64, android.util.Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(data, 0, data.size)
+    }
+    fun AlteraDados(dados: DadosLogin) {
+        BancodeDados.arquivosDadosCadastrado.forEach{
+            if(it.email == dados.email){
+                it.pontos = dados.pontos
+                return
+            }
+        }
     }
 
 }
