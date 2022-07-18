@@ -15,7 +15,7 @@ class BemVindoActivity : AppCompatActivity() {
     }
     private fun time() {
         val intent = Intent(this, LoginActivity::class.java)
-        val timer = object : CountDownTimer(3000, 1000) {
+        val timer = object : CountDownTimer(5000, 1000) {
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
             }
