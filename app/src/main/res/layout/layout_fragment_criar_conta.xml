@@ -12,20 +12,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationCriarConta"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/criar_conta" />
 
         <TextView
             android:id="@+id/txtTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:textColor="@color/colorPrimary"
             android:text="@string/criar_conta"
+            android:textColor="@color/colorPrimary"
             android:textSize="40sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/animationCriarConta" />
 
         <TextView
             android:id="@+id/txtDescCriarConta"
@@ -34,7 +43,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:text="Se ainda não possui uma conta ativa, então crie agora."
+            android:text="@string/se_ainda_n_o_possui_uma_conta_ativa_ent_o_crie_agora"
             android:textAlignment="center"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"

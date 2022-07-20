@@ -54,10 +54,7 @@ class JogosLibrasFragment: Fragment() {
                 Ui.AlteraDados(BancodeDados.dadosUser)
                 findNavController().popBackStack(R.id.home, false)
             }
-
     }
-
-
     /**
      * Método criado para setar os itens da Header
      * @param view View
@@ -98,23 +95,25 @@ class JogosLibrasFragment: Fragment() {
         view.imgPrimeira.setOnClickListener {
             if (objImagem1.nomeImagem == selecionada.nomeImagem){
                 BancodeDados.pontos++
-                Log.i("teste", "ACERTOU:sua Pontuação ${BancodeDados.pontos}")
+//                Log.i("teste", "ACERTOU:sua Pontuação ${BancodeDados.pontos}")
             }
             BancodeDados.num ++
-            findNavController().navigate(R.id.action_inicia_jogo_self2)
-            val navController = findNavController()
-            navController.popBackStack(R.id.inicia_jogo, false)
+           navigate()
         }
         view.imgSegunda.setOnClickListener {
             if(objImagem2.nomeImagem == selecionada.nomeImagem){
                 BancodeDados.pontos++
-                Log.i("teste", "ACERTOU:sua Pontuação ${BancodeDados.pontos}")
+//                Log.i("teste", "ACERTOU:sua Pontuação ${BancodeDados.pontos}")
             }
             BancodeDados.num ++
-            findNavController().navigate(R.id.action_inicia_jogo_self2)
-            val navController = findNavController()
-            navController.popBackStack(R.id.inicia_jogo, false)
+           navigate()
         }
+    }
+
+    private fun navigate() {
+        findNavController().navigate(R.id.action_inicia_jogo_self2)
+        val navController = findNavController()
+        navController.popBackStack(R.id.inicia_jogo, false)
     }
 
     private fun reduzBitmap(bmpFotoRotation: Bitmap): Bitmap? {

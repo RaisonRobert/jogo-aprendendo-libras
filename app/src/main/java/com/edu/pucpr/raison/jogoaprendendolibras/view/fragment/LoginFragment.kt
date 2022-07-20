@@ -30,6 +30,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        setPreferencesLogin("", "")
+        Log.i("teste", "banco de dados: ${BancodeDados.arquivosDadosCadastrado}")
         loading = Ui.createLoadDialog(requireContext(), false)
         if (verificarLogin()) {
             startHome()

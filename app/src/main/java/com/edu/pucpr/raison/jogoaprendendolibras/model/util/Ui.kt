@@ -71,6 +71,7 @@ object Ui {
         }
         return mAlertDialog
     }
+
     /**
      * Método que converte a string Base64 em um bitmap
      * @param base64 String a ser convertida

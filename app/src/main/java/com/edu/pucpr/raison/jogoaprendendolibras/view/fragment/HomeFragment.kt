@@ -18,6 +18,7 @@ import com.edu.pucpr.raison.jogoaprendendolibras.model.util.Ui
 import com.edu.pucpr.raison.jogoaprendendolibras.view.activity.HomeActivity
 import com.edu.pucpr.raison.jogoaprendendolibras.view.activity.LoginActivity
 import kotlinx.android.synthetic.main.dialog_alfabeto.view.*
+import kotlinx.android.synthetic.main.dialog_apaga_conta.view.*
 import kotlinx.android.synthetic.main.layout_fragment_criar_conta.view.*
 import kotlinx.android.synthetic.main.layout_fragment_home.view.*
 import kotlinx.android.synthetic.main.layout_fragment_jogos_libras.view.*
@@ -81,11 +82,39 @@ class HomeFragment : Fragment(){
             R.id.menuSair -> {
                 startLogin()
             }
+            R.id.menuApagarConta ->{
+                dialogApagaConta()
+            }
             R.id.menuAlfabeto -> {
                 dialogAlfabeto()
             }
+            R.id.menuAlterarDados -> {
+                findNavController().navigate(R.id.action_home_to_alterar)
+            }
+
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun dialogApagaConta() {
+        val alertDialogExibir = AlertDialog.Builder(requireContext())
+        val inflater = layoutInflater
+        val view = inflater.inflate(R.layout.dialog_apaga_conta, null)
+        view.iconDialog.setImageResource(R.drawable.ic_fail)
+        view.titleDialog.text = "Poxa..."
+        view.subtitleDialog.text= "Tem certeza que deseja apagar sua conta?"
+        view.descriptionDialog.text = ""
+        alertDialogExibir.setView(view)
+        val dialog = alertDialogExibir.create()
+        dialog.show()
+        view.buttonCancela.setOnClickListener {
+            dialog.dismiss()
+        }
+        view.buttonOK.setOnClickListener {
+            dialog.dismiss()
+                BancodeDados.arquivosDadosCadastrado.remove(BancodeDados.dadosUser)
+            startLogin()
+        }
     }
 
     private fun dialogAlfabeto() {

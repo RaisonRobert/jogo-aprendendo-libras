@@ -13,67 +13,98 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary" />
+
+            <include
+                android:id="@+id/headerView"
+                layout="@layout/header_simple" />
+        </LinearLayout>
+
         <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/animationLogin"
+            android:id="@+id/animationCriarConta"
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/login" />
+            app:lottie_rawRes="@raw/criar_conta" />
 
         <TextView
-            android:id="@+id/txtLogin"
+            android:id="@+id/txtDescCriarConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/titulo_login"
-            android:textColor="@color/colorPrimary"
-            android:textSize="40sp"
-            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="Altere seu nome e sua senha"
+            android:textAlignment="center"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/animationLogin" />
-
-        <TextView
-            android:id="@+id/txtDescLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/descricao_login"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="@+id/txtLogin"
-            app:layout_constraintStart_toStartOf="@+id/txtLogin"
-            app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/animationCriarConta" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailLayout"
+            android:id="@+id/nomeLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:hint="@string/nome"
+            android.support.design:hintAnimationEnabled="true"
+            android.support.design:hintEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDescCriarConta">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nomefield"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_account"
+                android:drawablePadding="12dp"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailLayoutcriarconta"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
+            android.support.design:hintAnimationEnabled="true"
+            android.support.design:hintEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDescLogin">
+            app:layout_constraintTop_toBottomOf="@+id/nomeLayout">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailfieldtext"
+                android:id="@+id/emailfieldtextcriarConta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints="@string/emaillogin"
+                android:autofillHints="Email"
                 android:drawableStart="@drawable/ic_email"
                 android:drawablePadding="12dp"
-                android:hint="@string/emaillogin"
                 android:inputType="textEmailAddress"
-                app:layout_constraintTop_toBottomOf="@+id/txtDescLogin" />
+                android:hint="@string/emaillogin"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordLayout"
+            android:id="@+id/passwordLayoutCriarConta"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,46 +117,31 @@
             android.support.design:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailLayout"
+            app:layout_constraintTop_toBottomOf="@+id/emailLayoutcriarconta"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordfield"
+                android:id="@+id/passwordfieldCriarConta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_lock"
                 android:drawablePadding="12dp"
-                android:ems="10"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/criarConta"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_below="@+id/passwordLayout"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="@color/white"
-            android:text="@string/deseja_criar_conta"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:cornerRadius="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
-
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLogar"
+            android:id="@+id/btnCriarConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/passwordLayout"
-            android:layout_alignEnd="@+id/passwordLayout"
-            android:layout_marginTop="20dp"
-            android:contentDescription="@string/btnLogin"
-            android:text="@string/btnLogin"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_alignStart="@+id/passwordLayoutCriarConta"
+            android:layout_alignEnd="@+id/passwordLayoutCriarConta"
+            android:contentDescription="Alterar"
+            android:text="Alterar"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/criarConta" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordLayoutCriarConta" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

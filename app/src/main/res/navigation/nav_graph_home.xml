@@ -23,11 +23,24 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_home_to_alterar"
+            app:destination="@id/alterar" />
     </fragment>
     <fragment android:id="@+id/rank"
         android:name="com.edu.pucpr.raison.jogoaprendendolibras.view.fragment.RankFragment"
         android:label="Rank"
-        tools:layout="@layout/layout_fragment_rank"/>
+        tools:layout="@layout/layout_fragment_rank">
+        <action
+            android:id="@+id/action_rank_self"
+            app:destination="@id/rank"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/rank"
+            app:popUpToInclusive="true"/>
+    </fragment>
     <fragment android:id="@+id/inicia_jogo"
         android:name="com.edu.pucpr.raison.jogoaprendendolibras.view.fragment.JogosLibrasFragment"
         android:label="Inicia Jogo"
@@ -38,4 +51,8 @@
             app:popUpTo="@id/inicia_jogo"
             app:popUpToInclusive="true"/>
     </fragment>
+    <fragment android:id="@+id/alterar"
+        android:name="com.edu.pucpr.raison.jogoaprendendolibras.view.fragment.AlterarDadosFragment"
+        android:label="Alterar Dados"
+        tools:layout="@layout/layout_fragment_alterar_dados"/>
 </navigation>

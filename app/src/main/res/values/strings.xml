@@ -10,7 +10,7 @@
     <string name="nomeCriarConta">Nome</string>
     <string name="criar_conta">Criar Conta</string>
     <string name="bem_vindo">Bem VIndo</string>
-    <string name="bem_vindo_titulo">Bem Vindo ao Apredendo Libras</string>
+    <string name="bem_vindo_titulo">Bem Vindo\nao\n</string>
     <string name="notValidEmail">Por favor, insira um email válido.</string>
     <string name="notValidLogin"> Email ou senha inválido.</string>
     <string name="vazio"> Preencha todos campos corretamente</string>
@@ -19,5 +19,6 @@
     <string name="textoDescJogoLibras">  Este aplicativo tem como um objetivo facilitar seu aprendizado na linguagem de libras, consiste em uma pergunta e o você seleciona a imagem correta, no fim você terá uma pontuação de acordo com as respostas certas.</string>
     <string name="tituloRank">Melhores Jogadores</string>
     <string name="pergunta">Pergunta</string>
+    <string name="se_ainda_n_o_possui_uma_conta_ativa_ent_o_crie_agora">Se ainda não possui uma conta ativa, então crie agora.</string>
 
 </resources>
