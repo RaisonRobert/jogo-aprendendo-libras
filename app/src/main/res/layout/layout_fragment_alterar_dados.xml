@@ -55,7 +55,7 @@
             app:layout_constraintTop_toBottomOf="@+id/animationCriarConta" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nomeLayout"
+            android:id="@+id/nomeLayoutAlterar"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtDescCriarConta">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nomefield"
+                android:id="@+id/nomefieldAlterar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_account"
@@ -90,10 +90,10 @@
             android.support.design:hintEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nomeLayout">
+            app:layout_constraintTop_toBottomOf="@+id/nomeLayoutAlterar">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailfieldtextcriarConta"
+                android:id="@+id/emailfieldtextAlterar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="Email"
@@ -104,7 +104,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordLayoutCriarConta"
+            android:id="@+id/passwordLayoutAlterar"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordfieldCriarConta"
+                android:id="@+id/passwordfieldAlterar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_lock"
@@ -130,18 +130,18 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnCriarConta"
+            android:id="@+id/btnAlterar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
-            android:layout_alignStart="@+id/passwordLayoutCriarConta"
-            android:layout_alignEnd="@+id/passwordLayoutCriarConta"
+            android:layout_alignStart="@+id/passwordLayoutAlterar"
+            android:layout_alignEnd="@+id/passwordLayoutAlterar"
             android:contentDescription="Alterar"
             android:text="Alterar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordLayoutCriarConta" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordLayoutAlterar" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

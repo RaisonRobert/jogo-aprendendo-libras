@@ -7,7 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.edu.pucpr.raison.jogoaprendendolibras.R
@@ -16,6 +19,7 @@ import com.edu.pucpr.raison.jogoaprendendolibras.model.util.Ui
 import com.edu.pucpr.raison.jogoaprendendolibras.model.util.Preferences
 import com.edu.pucpr.raison.jogoaprendendolibras.view.activity.HomeActivity
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.layout_fragment_jogos_libras.view.*
 import kotlinx.android.synthetic.main.layout_fragment_login.view.*
 
 class LoginFragment : Fragment() {
@@ -116,7 +120,6 @@ class LoginFragment : Fragment() {
             .setOnDismissListener {
                 startHome()
         }
-
     }
 
     private fun setPreferencesLogin(email: String, senha: String) {
